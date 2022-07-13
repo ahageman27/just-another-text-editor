@@ -10,7 +10,7 @@ module.exports = () => {
   return {
     mode: "development",
     entry: {
-      main: "./src/js/index.js",
+      main: "./index.js",
       install: "./src/js/install.js",
     },
     output: {
@@ -30,14 +30,14 @@ module.exports = () => {
         crossorigin: "use-credentials", //can be null, use-credentials or anonymous
         icons: [
           {
-            src: path.resolve("./favicon.ico"),
+            src: path.resolve("./src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
           },
         ],
       }),
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "service-worker.js",
+        swDest: "src-sw.js",
       }),
     ],
 
